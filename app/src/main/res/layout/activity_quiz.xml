@@ -16,13 +16,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
-        <ImageButton
+        <Button
             android:id="@+id/true_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="true"
+            android:contentDescription="@string/true_button"
             android:text="@string/true_button" />
-        <ImageButton
+        <Button
             android:id="@+id/false_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,17 +30,24 @@
             android:contentDescription="false"/>
 
     </LinearLayout>
-    <ImageButton
+
+    <Button
         android:id="@+id/prev_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/prev_button"
         android:contentDescription="prev"
-        />
-    <ImageButton
-    android:id="@+id/next_button"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/next_button"
-        android:contentDescription="next"/>
+        android:text="@string/prev_button" />
+
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="next"
+        android:text="@string/next_button" />
+
+    <Button
+        android:id="@+id/cheat_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cheat_button" />
 </LinearLayout>

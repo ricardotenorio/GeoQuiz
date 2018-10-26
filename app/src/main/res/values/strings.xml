@@ -5,11 +5,17 @@
     <string name="false_button">false</string>
     <string name="next_button">next</string>
     <string name="prev_button">prev</string>
+    <string name="cheat_button">cheat</string>
     <string name="correct_toast">Correto!</string>
     <string name="incorrect_toast">Incorreto!</string>
+
     <string name="questao1">teste1</string>
     <string name="questao2">teste2</string>
     <string name="questao3">teste3</string>
     <string name="questao4">teste4</string>
     <string name="questao5">teste5</string>
+
+    <string name="warning">Tem certeza que quer fazer isso?</string>
+    <string name="show_answer_button">Mostrar resposta</string>
+    <string name="judgment_toast">Trapacear é errado...</string>
 </resources>

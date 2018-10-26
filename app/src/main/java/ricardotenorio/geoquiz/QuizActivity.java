@@ -1,9 +1,10 @@
 package ricardotenorio.geoquiz;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,10 +14,11 @@ import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
 
-    private ImageButton mTrueButton;
-    private ImageButton mFalseButton;
-    private ImageButton mNextButton;
-    private ImageButton mPrevButton;
+    private Button mTrueButton;
+    private Button mFalseButton;
+    private Button mNextButton;
+    private Button mPrevButton;
+    private Button mCheatButton;
     private TextView mQuestionTextView;
     private int pontos = 0;
     private int mCurrentIndex = 0;
@@ -40,10 +42,11 @@ public class QuizActivity extends AppCompatActivity {
 
 
         mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
-        mTrueButton = (ImageButton) findViewById(R.id.true_button);
-        mFalseButton = (ImageButton) findViewById(R.id.false_button);
-        mNextButton = (ImageButton) findViewById(R.id.next_button);
-        mPrevButton = (ImageButton) findViewById(R.id.prev_button);
+        mTrueButton = (Button) findViewById(R.id.true_button);
+        mFalseButton = (Button) findViewById(R.id.false_button);
+        mNextButton = (Button) findViewById(R.id.next_button);
+        mPrevButton = (Button) findViewById(R.id.prev_button);
+        mCheatButton = (Button) findViewById(R.id.cheat_button);
 
         updateQuestion();
 
@@ -84,6 +87,15 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
+        mCheatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean answerIsTrue = mQuestionBank.get(mCurrentIndex).isAnswerTrue();
+                Intent intent = CheatActivity.newIntent(QuizActivity.this, answerIsTrue);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void updateQuestion() {
@@ -114,35 +126,35 @@ public class QuizActivity extends AppCompatActivity {
         return mQuestionTextView;
     }
 
-    public ImageButton getTrueButton() {
+    public Button getTrueButton() {
         return mTrueButton;
     }
 
-    public void setTrueButton(ImageButton trueButton) {
+    public void setTrueButton(Button trueButton) {
         mTrueButton = trueButton;
     }
 
-    public ImageButton getFalseButton() {
+    public Button getFalseButton() {
         return mFalseButton;
     }
 
-    public void setFalseButton(ImageButton falseButton) {
+    public void setFalseButton(Button falseButton) {
         mFalseButton = falseButton;
     }
 
-    public ImageButton getNextButton() {
+    public Button getNextButton() {
         return mNextButton;
     }
 
-    public void setNextButton(ImageButton nextButton) {
+    public void setNextButton(Button nextButton) {
         mNextButton = nextButton;
     }
 
-    public ImageButton getPrevButton() {
+    public Button getPrevButton() {
         return mPrevButton;
     }
 
-    public void setPrevButton(ImageButton prevButton) {
+    public void setPrevButton(Button prevButton) {
         mPrevButton = prevButton;
     }
 
